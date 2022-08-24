@@ -1,8 +1,18 @@
 package io.github.helio.domain.entity;
 
+import javax.persistence.*;
+import java.lang.annotation.Target;
+
+@Entity
+@Table(name = "cliente")
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "nome", length = 100)
     private String nome;
 
     public Cliente() {
